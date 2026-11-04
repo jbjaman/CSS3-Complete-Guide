@@ -1,0 +1,116 @@
+Question: Responsive Web Design কী?
+
+Responsive Web Design হলো এমন একটি Web Design Approach, যার মাধ্যমে Website বিভিন্ন Screen Size ও Device অনুযায়ী নিজের Layout, Content এবং Elements Adjust করতে পারে।
+
+Responsive Design-এর তিনটি গুরুত্বপূর্ণ বিষয়:
+1. Flexible Layouts
+2. Flexible Images
+3. Media Queries
+
+Responsive Web Design is an approach to web development that allows websites to adapt their layout and content to different screen sizes and devices. It uses flexible layouts, responsive images, and CSS media queries.
+
+Question:Mobile-first Design
+
+Mobile-first Design হলো এমন একটি Design Approach, যেখানে প্রথমে Mobile Screen-এর জন্য Website তৈরি করা হয়। এরপর Tablet এবং Desktop-এর জন্য Layout উন্নত করা হয়।
+
+Mobile-first vs Desktop-first
+Mobile-first	Desktop-first
+Mobile দিয়ে শুরু	Desktop দিয়ে শুরু
+min-width বেশি ব্যবহার হয়	max-width বেশি ব্যবহার হয়
+ছোট Screen থেকে বড় Screen	বড় Screen থেকে ছোট Screen
+
+Mobile-first design is an approach where we design and develop the website for smaller screens first, then progressively enhance the layout for larger screens using media queries
+
+Question: Media Queries ও Breakpoints
+
+Media Query হলো CSS-এর একটি Feature, যা Screen-এর Width, Height বা অন্যান্য Device Characteristics অনুযায়ী নির্দিষ্ট CSS Rules Apply করতে সাহায্য করে।
+
+Syntax: 
+
+@media (max-width: 768px) {
+  /* CSS */
+}
+
+-> Breakpoints কী?
+
+Breakpoints হলো নির্দিষ্ট Screen Width, যেখানে Website-এর Layout পরিবর্তন করা হয়।
+
+Question: Flexbox vs Grid in Responsive Design
+
+Flexbox ব্যবহার করবে যখন Items-গুলোকে একটি Row বা Column-এ সাজাতে হবে।
+Grid ব্যবহার করবে যখন একাধিক Row এবং Column নিয়ে Layout তৈরি করতে হবে।
+
+Flexbox is suitable for one-dimensional layouts such as navigation bars, while CSS Grid is suitable for two-dimensional layouts such as product grids and dashboards. Both can be used together to create responsive interfaces.
+
+Question:Responsive Images
+
+একটি Website-এ Image Responsive না হলে Mobile Screen-এ Image Screen-এর বাইরে চলে যেতে পারে।
+
+We can make images responsive by using max-width: 100% and height: auto. We can also use the picture element and srcset to provide different image sources for different screen sizes or resolutions.
+
+Question:max-width vs width
+
+width কোনো Element-এর Width নির্ধারণ করে।
+max-width Element-এর সর্বোচ্চ Width নির্ধারণ করে।
+
+The width property sets the width of an element, while max-width defines its maximum allowed width. Using width: 100% with max-width helps create flexible and responsive containers.
+
+Question: min-height vs height
+
+height Element-এর নির্দিষ্ট Height নির্ধারণ করে।
+min-height Element-এর সর্বনিম্ন Height নির্ধারণ করে। Content বেশি হলে Element প্রয়োজন অনুযায়ী বড় হতে পারে।
+
+height ------	min-height
+নির্দিষ্ট Height সেট করে ----	Minimum Height সেট করে
+Content বেশি হলে Overflow হতে পারে -----	Content অনুযায়ী বড় হতে পারে
+Fixed Layout-এ কার্যকর ------	Flexible Layout-এ কার্যকর
+
+Question: Overflow Handling
+
+যখন কোনো Element-এর Content তার নির্ধারিত Container-এর জায়গার বাইরে চলে যায়, তখন Overflow তৈরি হয়।
+
+Overflow-এর গুরুত্বপূর্ণ Values:
+Value	কাজ
+visible	Content বাইরে দেখা যায়
+hidden	অতিরিক্ত Content লুকায়
+scroll	Scrollbar দেখায়
+auto	প্রয়োজন হলে Scrollbar দেখায়
+
+Question: Cross-browser Compatibility
+
+এটি হলো বিভিন্ন Browser-এ Website যেন সঠিকভাবে কাজ করে এবং যতটা সম্ভব Consistent Experience দেয়, তা নিশ্চিত করার প্রক্রিয়া।
+
+কীভাবে নিশ্চিত করবে?
+1. Standard HTML ও CSS ব্যবহার করবে।
+2. বিভিন্ন Browser-এ Website Test করবে।
+3. প্রয়োজন হলে CSS Prefix ব্যবহার করবে।
+4. CSS Reset বা Normalize ব্যবহার করতে পারো।
+5. Browser DevTools দিয়ে সমস্যা খুঁজবে।
+6. Can I Use-এর মতো Resource দিয়ে Feature Support যাচাই করবে।
+
+Cross-browser compatibility means ensuring that a website works consistently across different web browsers. We can achieve this by using standard web technologies, testing across browsers, and checking browser feature support.
+
+Question: User-friendly UI বলতে কী বোঝায়?
+
+User-friendly UI হলো এমন একটি Interface, যেটি ব্যবহারকারীর জন্য সহজ, পরিষ্কার, বোধগম্য এবং ব্যবহার করতে সুবিধাজনক।
+
+একটি ভালো User-friendly UI-এর বৈশিষ্ট্য:
+1. Simple Navigation
+2. Consistent Design
+3. Readable Typography
+4. Proper Spacing
+5. Responsive Layout
+6. Accessible Color Contrast
+7. Clear Error Messages
+8. Loading Feedback
+9. Easy-to-use Forms
+10. Clear Buttons and Actions
+
+A user-friendly UI is an interface that is easy to understand and use. It provides clear navigation, readable content, consistent design, accessibility, and a smooth experience across different devices.
+
+>>> 
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+এটি Mobile Browser-কে Device-এর Width অনুযায়ী Viewport সেট করতে সাহায্য করে।

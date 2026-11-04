@@ -1,0 +1,474 @@
+Question: CSS কী?
+
+CSS-এর পূর্ণরূপ Cascading Style Sheets।
+
+CSS হলো একটি Style Sheet Language, যা HTML Elements-এর Design, Layout, Color, Spacing এবং Presentation নিয়ন্ত্রণ করে।
+
+CSS stands for Cascading Style Sheets. It is used to style HTML elements and control the layout, colors, fonts, spacing, and overall appearance of web pages.
+
+h1 {
+  color: blue;
+  font-size: 32px;
+}
+
+p {
+  color: gray;
+  font-size: 18px;
+}
+
+এখানে:
+- h1, p = Selector
+- color, font-size = Properties
+- blue, 32px = Values
+
+CSS Syntax:
+
+selector {
+  property: value;
+}
+
+Question: Inline vs Internal vs External CSS
+
+Inline CSS:
+
+HTML Element-এর ভিতরে style Attribute ব্যবহার করা হয়। কোনো নির্দিষ্ট Element-এর জন্য সরাসরি Style দিতে।
+
+<h1 style="color: red;">
+  Hello World
+</h1>
+
+Internal CSS:
+
+HTML-এর head Element-এর ভিতরে style Tag ব্যবহার করা হয়।
+
+<head>
+  <style>
+    h1 {
+      color: blue;
+    }
+  </style>
+</head>
+
+একটি নির্দিষ্ট HTML Page-এর Styling করতে।
+
+External CSS:
+
+আলাদা .css File তৈরি করে HTML-এর সঙ্গে Connect করা হয়। Professional এবং বড় Project-এ।
+
+<link rel="stylesheet" href="style.css">
+
+//CSS (style.css):
+
+h1 {
+  color: green;
+}
+
+Question: CSS Selectors
+
+CSS Selector দিয়ে HTML-এর কোন Element-কে Style করতে হবে তা নির্ধারণ করা হয়।
+
+<h1 id="title">Welcome</h1>
+
+<p class="text">Hello</p>
+
+<p class="text">World</p>
+
+<button>Click</button>
+
+-> Element Selector: 
+
+p {
+  color: red;
+}
+
+-> Class Selector:
+
+.text {
+  color: blue;
+}
+
+-> ID Selector:
+
+#title {
+  color: green;
+}
+
+-> Universal Selector: সব Element Select করবে।
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+-> Group Selector:
+
+h1, p, button {
+  font-family: Arial;
+}
+
+-> Descendant Selector: div-এর ভিতরে থাকা যেকোনো Descendant p Element Select করবে।
+
+div p {
+  color: red;
+}
+
+-> Child Selector: শুধু div-এর Direct Child p Element Select করবে।
+
+div > p {
+  color: blue;
+}
+
+Question: CSS Specificity ও Inheritance
+
+Specificity কী?
+
+একটি HTML Element-এ একাধিক CSS Rule Apply হলে কোন Rule-এর Priority বেশি হবে, সেটি নির্ধারণের একটি নিয়ম হলো Specificity।
+
+সাধারণ Priority:
+1. Inline Style
+2. ID Selector
+3. Class / Attribute / Pseudo-class Selector
+4. Element / Pseudo-element Selector
+
+Inheritance কী?
+
+কিছু CSS Property Parent Element থেকে Child Element-এ Inherit হয়।
+
+সাধারণত Inherited Properties:
+- color
+- font-family
+- font-size
+- line-height
+
+সাধারণত Inherit হয় না:
+- margin
+- padding
+- border
+- width
+
+Specificity determines which CSS rule takes priority when multiple rules target the same element. Inheritance allows certain CSS properties to pass from parent elements to child elements.
+
+Question: CSS Box Model
+
+- Content: Element-এর মূল Content।
+- Padding: Content এবং Border-এর মাঝখানের Space।
+- Border: Content ও Padding-কে ঘিরে থাকা Border।
+- Margin: Element-এর বাইরের Space।
+
+এবার box-sizing বুঝি:
+
+* {
+  box-sizing: border-box;
+}
+
+border-box ব্যবহার করলে নির্ধারিত Width-এর মধ্যেই Content, Padding ও Border অন্তর্ভুক্ত থাকে।
+
+যেমন:
+
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  box-sizing: border-box;
+}
+
+এখানে মোট Width থাকবে 200px। Margin অতিরিক্ত জায়গা নেবে।
+
+The CSS Box Model consists of content, padding, border, and margin. It determines how an element's size and spacing are calculated.
+
+Question: CSS Display Properties
+
+display Property নির্ধারণ করে একটি Element কীভাবে Layout-এ আচরণ করবে।
+
+display: block
+- নতুন লাইন থেকে শুরু হয়।
+- সাধারণত উপলব্ধ পুরো Width নেয়।
+- Width ও Height সেট করা যায়।
+display: inline
+- নতুন লাইন শুরু করে না।
+- Content অনুযায়ী Width নেয়।
+- সাধারণত Width ও Height সরাসরি কার্যকর হয় না।
+display: inline-block
+- একই লাইনে থাকতে পারে।
+- Width ও Height সেট করা যায়।
+display: none
+- Element সম্পূর্ণভাবে Layout থেকে সরিয়ে দেয়।
+
+Property || কী হয়?
+display: none || Element দেখা যায় না এবং Layout Space-ও থাকে না
+visibility: hidden || Element দেখা যায় না, কিন্তু Layout Space থাকে
+opacity: 0 || Element স্বচ্ছ হয়, কিন্তু Layout Space থাকে
+
+Question: CSS Position
+
+position Property দিয়ে একটি Element-এর অবস্থান নির্ধারণ করা হয়।
+
+1. Static : এটি Default Position| সাধারণ Document Flow অনুযায়ী Element অবস্থান করে।
+
+.box {
+  position: static;
+}
+
+2. Relative : নিজের স্বাভাবিক অবস্থানের তুলনায় Element সরানো যায়।
+
+.box {
+  position: relative;
+  top: 20px;
+  left: 30px;
+} // Relative Element সরলেও তার আগের Layout Space বজায় থাকে।
+
+3. Absolute : সবচেয়ে কাছের Positioned Ancestor-এর তুলনায় অবস্থান নির্ধারণ করে।
+
+.parent {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+// যদি Positioned Ancestor না থাকে, তাহলে সাধারণত Initial Containing Block-এর ভিত্তিতে অবস্থান নির্ধারিত হয়।
+
+4. Fixed : সাধারণত Browser Viewport-এর তুলনায় অবস্থান নির্ধারণ করে।
+
+.button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+} // Page Scroll করলেও সাধারণত একই জায়গায় থাকে।
+
+5. Sticky : Scroll করার সময় নির্দিষ্ট অবস্থানে পৌঁছালে Element আটকে থাকে।
+
+.navbar {
+  position: sticky;
+  top: 0;
+}
+
+Question: CSS Flexbox
+
+Flexbox হলো CSS-এর একটি One-dimensional Layout System।
+One-dimensional মানে এটি একবারে একটি Direction নিয়ে কাজ করে:
+- Row (Horizontal)
+- Column (Vertical)
+
+দুটি বিষয় মনে রাখতে হবে:
+- Flex Container = Parent
+- Flex Items = Direct Children
+
+সবচেয়ে গুরুত্বপূর্ণ Flexbox Properties:
+
+Property	------ কাজ
+display: flex	----- Flex Layout চালু করে
+flex-direction	----- Row বা Column নির্ধারণ
+justify-content	---- Main Axis বরাবর Alignment
+align-items	----- Cross Axis বরাবর Alignment
+flex-wrap ---- প্রয়োজন হলে পরের লাইনে নেয়
+gap	--- Items-এর মধ্যে Space
+flex-grow ---- অতিরিক্ত Space ভাগ করে নেয়
+flex-shrink ----	প্রয়োজন হলে Item ছোট করে
+align-self	---- নির্দিষ্ট Item-এর Alignment পরিবর্তন
+
+-> justify-content:
+
+Common Values:
+- flex-start
+- flex-end
+- center
+- space-between
+- space-around
+- space-evenly
+
+-> align-items
+-> flex-direction
+
+Flexbox is a one-dimensional CSS layout system used to arrange and align items in a row or column. It makes it easier to create flexible and responsive layouts.
+
+Question: CSS Grid
+
+CSS Grid হলো একটি Two-dimensional Layout System।
+অর্থাৎ এটি একই সঙ্গে Row এবং Column নিয়ে কাজ করতে পারে।
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+fr কী?
+fr হলো Fractional Unit। এটি Grid Container-এর উপলব্ধ জায়গার একটি অংশ নির্দেশ করে।
+grid-template-columns: 1fr 2fr 1fr; // এখানে তিনটি Column-এর অনুপাত 1:2:1।
+
+-> Flexbox vs Grid
+
+Flexbox	 --- Grid
+One-dimensional ----	Two-dimensional
+Row অথবা Column	------ Row এবং Column
+Content alignment-এ কার্যকর ------	Complex Layout-এ কার্যকর
+Navbar, Button Groups -----	Dashboard, Product Layout
+
+Flexbox is mainly used for one-dimensional layouts, while CSS Grid is used for two-dimensional layouts. Flexbox works with rows or columns, whereas Grid handles both rows and columns.
+
+Question: CSS Units
+
+CSS-এ Size নির্ধারণ করার জন্য বিভিন্ন Unit ব্যবহার করা হয়।
+
+Unit	অর্থ
+px	Pixel
+%	Parent-এর তুলনায় Percentage
+em	সাধারণত Parent-এর Font Size-এর তুলনায়
+rem	Root Element-এর Font Size-এর তুলনায়
+vh	Viewport Height-এর Percentage
+vw	Viewport Width-এর Percentage
+
+-> em vs rem
+
+html {
+  font-size: 16px;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+তাহলে 2rem = 32px
+
+px is a fixed CSS unit, percentage is relative to a reference size, em is based on the relevant parent or element font size, and rem is based on the root element's font size.
+
+Question: Pseudo-class vs Pseudo-element
+
+Pseudo-class:
+
+কোনো Element-এর বিশেষ State বা Condition Select করতে ব্যবহৃত হয়।
+
+Common Pseudo-classes:
+- :hover
+- :focus
+- :active
+- :first-child
+- :last-child
+- :nth-child()
+
+button:hover {
+  background-color: blue;
+}
+
+input:focus {
+  border-color: green;
+}
+
+li:first-child {
+  color: red;
+}
+
+Pseudo-element:
+
+কোনো Element-এর নির্দিষ্ট অংশ Style করতে বা Generated Content যোগ করতে ব্যবহৃত হয়।
+
+p::first-letter {
+  font-size: 30px;
+}
+
+p::first-line {
+  color: blue;
+}
+
+h1::before {
+  content: "★ ";
+}
+
+h1::after {
+  content: "!";
+}
+
+পার্থক্য:
+Pseudo-class ---- Pseudo-element
+Element-এর State বা Condition ---	Element-এর নির্দিষ্ট অংশ
+:hover ----- ::before
+:focus ----- ::after
+:first-child ----- ::first-letter
+
+Pseudo-classes select elements based on their state or condition, while pseudo-elements style specific parts of an element or generate additional content.
+
+Question: Media Queries & Responsive CSS
+
+Media Query হলো CSS-এর একটি Feature, যার সাহায্যে Screen Size বা Device-এর বৈশিষ্ট্য অনুযায়ী আলাদা CSS Style প্রয়োগ করা যায়।
+
+Media Query Syntax:
+
+@media (condition) {
+  /* CSS rules */
+}
+
+-> Mobile-first Design কী?
+
+Mobile-first Design হলো প্রথমে Mobile Screen-এর জন্য CSS তৈরি করা, তারপর বড় Screen-এর জন্য CSS বাড়ানো।
+
+Media queries allow us to apply different CSS styles based on screen size and device characteristics. They are essential for creating responsive web designs.
+
+Question: z-index
+
+z-index নির্ধারণ করে Overlapping Element-এর মধ্যে কোন Element সামনে বা পেছনে থাকবে।
+
+- বেশি z-index মানেই সবসময় সবকিছুর ওপরে নয়।
+- Stacking Context গুরুত্বপূর্ণ।
+- Positioned Element-এ সাধারণত z-index কাজ করে; Flex/Grid Item-এর ক্ষেত্রেও এটি কাজ করতে পারে।
+
+The z-index property controls the stacking order of overlapping elements. Elements with higher stacking priority appear in front within the relevant stacking context.
+
+Question: CSS Transitions
+
+Transition দিয়ে কোনো CSS Property পরিবর্তনের সময় Smooth Animation তৈরি করা যায়।
+
+.btn {
+  background: blue;
+  color: white;
+  padding: 12px 24px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: green;
+}
+
+এখানে Mouse Hover করলে Background Color হঠাৎ পরিবর্তন না হয়ে Smoothভাবে পরিবর্তন হবে।
+
+গুরুত্বপূর্ণ Properties:
+- transition-property
+- transition-duration
+- transition-timing-function
+- transition-delay
+
+CSS transitions allow property changes to happen smoothly over a specified duration, improving the user interface experience.
+
+Question: CSS Variables
+
+CSS Variables হলো এমন Custom Properties, যেগুলো একাধিক জায়গায় Reuse করা যায়।
+
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #64748b;
+  --main-spacing: 20px;
+}
+
+button {
+  background-color: var(--primary-color);
+}
+
+p {
+  color: var(--secondary-color);
+  margin: var(--main-spacing);
+}
+
+এখানে:
+- --primary-color = Custom Variable
+- var() = Variable-এর Value ব্যবহার করার Function
+- :root = Document-এর Root Element
+
+কেন CSS Variables ব্যবহার করব?
+
+ধরো, পুরো Website-এর Primary Color পরিবর্তন করতে হবে। প্রতিটি জায়গায় আলাদাভাবে Color পরিবর্তন না করে শুধু Variable পরিবর্তন করলেই হবে।
+
+CSS variables allow us to define reusable custom properties. They make styling easier to maintain and help manage consistent design values across a website.
+
+ 

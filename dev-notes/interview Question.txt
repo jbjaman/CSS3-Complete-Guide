@@ -1,0 +1,57 @@
+Q: Which CSS method is best for large projects?
+
+External CSS। কারণ এটি Code Reusability, Maintainability এবং Separation of Concerns বজায় রাখতে সাহায্য করে।
+
+তবে React Project-এ CSS Modules, Styled Components বা অন্যান্য Styling Approaches-ও ব্যবহার হতে পারে।
+
+Q: Relative এবং Absolute-এর পার্থক্য কী?
+
+- Relative নিজের স্বাভাবিক অবস্থানের তুলনায় সরে যায়।
+- Absolute তার Positioned Ancestor-এর তুলনায় অবস্থান নির্ধারণ করে এবং সাধারণ Document Flow থেকে বের হয়ে যায়।
+
+Q1. What is the CSS Box Model?
+
+The CSS Box Model consists of content, padding, border, and margin. It determines the size and spacing of HTML elements.
+
+Q2. What is the difference between Flexbox and Grid?
+
+Flexbox is a one-dimensional layout system, while Grid is a two-dimensional layout system. Flexbox handles rows or columns, whereas Grid handles both.
+
+Q3. What is the difference between relative, absolute, fixed, and sticky positioning?
+
+Relative positions an element relative to its normal position. Absolute positions it relative to its containing block. Fixed generally positions it relative to the viewport, while sticky behaves like a normal element until it reaches a specified scroll position.
+
+Q4. What is CSS Specificity?
+
+CSS Specificity determines which CSS rule takes priority when multiple rules target the same element. ID selectors generally have higher specificity than class and element selectors.
+
+Q5. What is Responsive Web Design?
+
+Responsive Web Design is an approach to creating websites that adapt to different screen sizes and devices using flexible layouts, CSS Grid, Flexbox, and media queries.
+
+
+// Responsive
+
+Why do we use breakpoints in responsive design?
+
+We use breakpoints to change the layout and styling of a website when the screen size reaches a specific width, ensuring a better user experience across different devices.
+
+Q1. What is Responsive Web Design?
+
+Responsive Web Design is an approach that makes websites adapt to different screen sizes and devices using flexible layouts, responsive images, and media queries.
+
+Q2. What is Mobile-first Design?
+
+Mobile-first design means developing the website for smaller screens first and then enhancing it for larger screens.
+
+Q3. What are Breakpoints in CSS?
+
+Breakpoints are specific screen widths where a website's layout or styling changes to provide a better user experience.
+
+Q4. What is the difference between width and max-width?
+
+Width sets an element's width, while max-width defines its maximum allowed width. max-width helps prevent elements from becoming too wide.
+
+Q5. How do you make a website responsive?
+
+I use flexible layouts with Flexbox and Grid, responsive images, relative units, and CSS media queries. I also test the website on different screen sizes.
