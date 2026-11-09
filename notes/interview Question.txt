@@ -29,6 +29,65 @@ Q5. What is Responsive Web Design?
 
 Responsive Web Design is an approach to creating websites that adapt to different screen sizes and devices using flexible layouts, CSS Grid, Flexbox, and media queries.
 
+Q1. What is CSS?
+
+CSS is a stylesheet language used to control the presentation and layout of HTML elements.
+
+Q2. What are the three ways to apply CSS?
+
+Inline, Internal, and External CSS.
+
+Q3. Explain the CSS Box Model.
+
+It consists of Content, Padding, Border, and Margin.
+
+Q4. What is CSS Specificity?
+
+It determines which CSS rule takes priority when multiple rules target the same element.
+
+Q5. What is the difference between margin and padding?
+
+Margin creates space outside an element's border, while padding creates space inside the border around its content.
+
+Q6. What is the difference between display: none and visibility: hidden?
+
+Display none removes the element from the layout, while visibility hidden hides it but preserves its layout space.
+
+Q7. What is the difference between relative and absolute positioning?
+
+Relative positioning offsets an element from its normal position. Absolute positioning removes it from normal flow and positions it relative to its nearest positioned ancestor.
+
+Q8. What is Flexbox?
+
+Flexbox is a one-dimensional CSS layout system used to arrange and align items in rows or columns.
+
+Q9. What is CSS Grid?
+
+CSS Grid is a two-dimensional layout system used to arrange content in rows and columns.
+
+Q10. Difference between Flexbox and Grid?
+
+Flexbox is primarily one-dimensional, while Grid handles two-dimensional layouts.
+
+Q11. What is a Media Query?
+
+Media Queries allow CSS styles to be applied based on device or viewport characteristics.
+
+Q12. What is Responsive Web Design?
+
+It is an approach that makes websites adapt to different screen sizes and devices.
+
+Q13. Difference between px, em, and rem?
+
+Px is a CSS pixel unit, em is relative to the current element's font size, and rem is relative to the root element's font size.
+
+Q14. What is z-index?
+
+It controls the stacking order of overlapping elements within applicable stacking contexts.
+
+Q15. What is the difference between a pseudo-class and a pseudo-element?
+
+A pseudo-class targets an element's state, while a pseudo-element targets a specific part of an element.
 
 // Responsive
 

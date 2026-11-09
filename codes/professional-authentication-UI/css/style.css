@@ -1,0 +1,163 @@
+/* Global Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+/* Main Container */
+
+.page-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+}
+
+/* Registration Card */
+
+.register-card {
+  width: 100%;
+  max-width: 460px;
+
+  background: #ffffff;
+
+  padding: 32px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+
+.card-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.card-header h1 {
+  color: #2563eb;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.card-header p {
+  color: #6b7280;
+}
+
+/* Form */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+/* Terms */
+
+.terms-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 13px;
+}
+
+.terms-group input {
+  accent-color: #2563eb;
+}
+
+/* Button */
+
+.register-form button {
+  width: 100%;
+
+  padding: 14px;
+
+  background: #2563eb;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.register-form button:hover {
+  background: #1d4ed8;
+}
+
+/* Footer */
+
+.card-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.card-footer a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 14px;
+  }
+
+  .register-card {
+    padding: 22px;
+  }
+
+  .card-header h1 {
+    font-size: 25px;
+  }
+}
