@@ -162,6 +162,7 @@ Question: CSS Box Model
 }
 
 border-box ব্যবহার করলে নির্ধারিত Width-এর মধ্যেই Content, Padding ও Border অন্তর্ভুক্ত থাকে।
+এজন্য Professional CSS-এ প্রায়ই Global box-sizing: border-box ব্যবহার করা হয়।
 
 যেমন:
 
@@ -193,6 +194,17 @@ display: inline-block
 - Width ও Height সেট করা যায়।
 display: none
 - Element সম্পূর্ণভাবে Layout থেকে সরিয়ে দেয়।
+display: flex
+- Flexbox Layout
+display: grid
+- Grid Layout
+display: none
+- Element Layout থেকে সরিয়ে দেয়
+
+display: none এবং visibility: hidden এক নয়।
+- display: none দিলে Element Layout Space নেয় না।
+- visibility: hidden দিলে Element দেখা যায় না, কিন্তু তার Layout Space থাকে।
+
 
 Property || কী হয়?
 display: none || Element দেখা যায় না এবং Layout Space-ও থাকে না
@@ -209,7 +221,7 @@ position Property দিয়ে একটি Element-এর অবস্থান
   position: static;
 }
 
-2. Relative : নিজের স্বাভাবিক অবস্থানের তুলনায় Element সরানো যায়।
+2. Relative : নিজের স্বাভাবিক অবস্থানের তুলনায় Element সরানো যায়। নিজের Normal Position থেকে Offset করা যায়
 
 .box {
   position: relative;
@@ -217,7 +229,7 @@ position Property দিয়ে একটি Element-এর অবস্থান
   left: 30px;
 } // Relative Element সরলেও তার আগের Layout Space বজায় থাকে।
 
-3. Absolute : সবচেয়ে কাছের Positioned Ancestor-এর তুলনায় অবস্থান নির্ধারণ করে।
+3. Absolute : সবচেয়ে কাছের Positioned Ancestor-এর তুলনায় অবস্থান নির্ধারণ করে। Nearest Positioned Ancestor অনুযায়ী Position হয়
 
 .parent {
   position: relative;
@@ -247,7 +259,7 @@ position Property দিয়ে একটি Element-এর অবস্থান
 
 Question: CSS Flexbox
 
-Flexbox হলো CSS-এর একটি One-dimensional Layout System।
+Flexbox হলো CSS-এর একটি One-dimensional Layout System। এটি মূলত একসঙ্গে একটি Dimension—Row অথবা Column—নিয়ে Layout তৈরি করতে সাহায্য করে।
 One-dimensional মানে এটি একবারে একটি Direction নিয়ে কাজ করে:
 - Row (Horizontal)
 - Column (Vertical)
@@ -263,11 +275,17 @@ display: flex	----- Flex Layout চালু করে
 flex-direction	----- Row বা Column নির্ধারণ
 justify-content	---- Main Axis বরাবর Alignment
 align-items	----- Cross Axis বরাবর Alignment
-flex-wrap ---- প্রয়োজন হলে পরের লাইনে নেয়
+flex-wrap ---- প্রয়োজন হলে পরের লাইনে নেয় .. Wrap control
 gap	--- Items-এর মধ্যে Space
 flex-grow ---- অতিরিক্ত Space ভাগ করে নেয়
-flex-shrink ----	প্রয়োজন হলে Item ছোট করে
+flex-shrink ----	প্রয়োজন হলে Item ছোট করে.. space কমলে Shrink করা
 align-self	---- নির্দিষ্ট Item-এর Alignment পরিবর্তন
+flex-basis	Initial Main Size
+align-self	নির্দিষ্ট Item-এর Alignment
+order	Visual Order
+
+- justify-content = Horizontal Main Axis।
+- align-items = Vertical Cross Axis।
 
 -> justify-content:
 
@@ -288,6 +306,16 @@ Question: CSS Grid
 
 CSS Grid হলো একটি Two-dimensional Layout System।
 অর্থাৎ এটি একই সঙ্গে Row এবং Column নিয়ে কাজ করতে পারে।
+
+গুরুত্বপূর্ণ Grid Properties
+- grid-template-columns
+- grid-template-rows
+- grid-column
+- grid-row
+- gap
+- grid-template-areas
+- justify-items
+- align-items
 
 .grid-container {
   display: grid;
@@ -339,7 +367,7 @@ Question: Pseudo-class vs Pseudo-element
 
 Pseudo-class:
 
-কোনো Element-এর বিশেষ State বা Condition Select করতে ব্যবহৃত হয়।
+কোনো Element-এর বিশেষ State বা Condition Select করতে ব্যবহৃত হয়। Element-এর নির্দিষ্ট State নির্বাচন করে।
 
 Common Pseudo-classes:
 - :hover
