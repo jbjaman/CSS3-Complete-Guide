@@ -1,0 +1,36 @@
+Question: Common Responsive Problems
+
+Problem	সম্ভাব্য কারণ	Solution
+Horizontal Scroll	Fixed Width	Flexible Width
+Image Overflow	Fixed Image Size	max-width: 100%
+Text Overflow	Long Text	overflow-wrap
+Card Break	Fixed Columns	Responsive Grid
+Navbar Break	No Wrapping	Flex Wrap / Mobile Nav
+Input Overflow	Box Model	border-box
+
+- Text Overflow
+
+.card {
+    overflow-wrap: anywhere;
+}
+
+- Responsive Table
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    min-width: 600px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+এতে ছোট Screen-এ পুরো Table-কে চেপে ছোট করার পরিবর্তে Horizontal Scroll করা যাবে।
+
+Question: Browser Developer Tools দিয়ে Responsive Testing
+
+How do you debug responsive issues?
+
+First, I inspect the layout using browser developer tools. Then I test different viewport sizes, check overflowing elements, inspect computed CSS properties, and adjust the layout using flexible dimensions, Grid, Flexbox, and media queries.
