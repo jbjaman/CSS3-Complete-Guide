@@ -1,0 +1,116 @@
+Question: Responsive Design
+
+Responsive Web Design is an approach where a website automatically adapts its layout and content to different screen sizes and devices using flexible layouts, media queries, and responsive components.
+
+Question: Responsive Design-এর তিনটি মূল ভিত্তি
+
+1. Fluid Layout: Fixed Width-এর পরিবর্তে Flexible Width ব্যবহার করা।
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+এখানে:
+- width: 90% → Available Space অনুযায়ী Width।
+- max-width: 1200px → সর্বোচ্চ Width সীমাবদ্ধ।
+- margin-inline: auto → Horizontal Centering।
+
+2. Flexible Images
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+Image-এর Natural Width Parent-এর Width থেকে বড় হলে Horizontal Overflow হতে পারে।
+
+3. Media Queries
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+Breakpoint কোনো বাধ্যতামূলক নির্দিষ্ট Device Size নয়। Content যেখানে Layout ভাঙতে শুরু করে, সেখানেই উপযুক্ত Breakpoint নির্ধারণ করবে।
+
+Question: Mobile-first vs Desktop-first
+
+Mobile-first
+Recommended
+320px → 768px → 1200px
+প্রথমে ছোট Screen, পরে বড় Screen।
+
+Desktop-first
+1200px → 768px → 320px
+প্রথমে বড় Screen, পরে ছোট Screen।
+
+Mobile-first design means developing the initial layout for smaller screens and then progressively enhancing it for larger screens using min-width media queries.
+
+Question: Advanced Responsive CSS Techniques
+
+A. clamp()
+একটি Property-এর Minimum, Preferred এবং Maximum Value নির্ধারণ করতে ব্যবহৃত হয়।
+
+.heading {
+    font-size: clamp(24px, 4vw, 48px);
+}
+
+অর্থাৎ Font Size:
+- Minimum: 24px
+- Preferred: 4vw
+- Maximum: 48px
+
+B. min(), max()
+
+.container {
+    width: min(90%, 1200px);
+}
+
+min() এখানে দুটি Value-এর মধ্যে ছোটটি নির্বাচন করে।
+
+.card {
+    width: max(250px, 50%);
+}
+
+max() বড় Value নির্বাচন করে।
+
+C. minmax()
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(200px, 1fr));
+}
+
+এখানে প্রতিটি Column কমপক্ষে 200px এবং Available Space অনুযায়ী বড় হতে পারে।
+
+D. auto-fit vs auto-fill
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+- auto-fit → Available Space অনুযায়ী Empty Tracks Collapse করে।
+- auto-fill → Empty Tracks সংরক্ষণ করে।
